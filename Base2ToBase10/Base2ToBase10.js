@@ -39,3 +39,14 @@ class Stack {
     }
 }
 
+function extractInput(){
+    let input = document.forms["binaryInputForm"]["binaryInput"].value
+
+    //ToDo
+
+    // check if input is a length of eight characters
+    // check that input contains only ones and zeros
+    // if the input fails to meet the previous two criteria alert user
+    // if input is valid instantiate a stack and insert input into the stack
+    console.log(input);
+}
