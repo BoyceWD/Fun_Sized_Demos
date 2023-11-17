@@ -1,43 +1,8 @@
-class Stack {
-    constructor(){
-        this.items = [];
-        this.top =0;
-    }
-
-    push(element){
-        this.items[this.top] = element;
-        this.top = this.top +1;
-
-    }
-
-    pop(){
-        if( this.isEmpty === false){
-            this.top = this.top - 1;
-            return this.items.pop();
-        }
-        
-    }
-
-    peek(){
-        return this.items[this.top - 1];
-    }
-
-    length(){
-        return this.top;
-    }
-
-    isEmpty(){
-        return this.top === 0;
-    }
-
-    print(){
-        var top = this.top - 1;
-        while(top >= 0){
-            console.log(this.items[top]);
-            top--;
-        }
-    }
-}
+/* 
+ After having had mutch difficulty getting a working implimentation of a Stack class, I've decided instead to use a string as an
+ alternative to an array. I should be able to use a string to store the text input from the user. I can use the slice method
+ to extract the contained characters last to first.
+ */
 
 function extractInput(){
     let input = document.forms["binaryInputForm"]["binaryInput"].value
@@ -50,3 +15,8 @@ function extractInput(){
     // if input is valid instantiate a stack and insert input into the stack
     console.log(input);
 }
+
+var a ="101010";
+console.log(a);
+a;
+console.log(a.slice(3,5));
