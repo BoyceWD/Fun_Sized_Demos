@@ -18,7 +18,20 @@ function extractInput(){
     // if input is valid instantiate a stack and insert input into the stack
     console.log(input);
 }
+function validateInput(){
 
+}
+function checkStringIsBinary(str) {
+    let isBinary = false;
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] == "0" || str[i] == "1") {
+        isBinary = true;
+      } else {
+        isBinary = false;
+      }
+    }
+    return isBinary;
+}
 var a ="101010";
 console.log(a);
 a;
