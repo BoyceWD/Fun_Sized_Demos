@@ -4,6 +4,9 @@
  to extract the contained characters last to first.
  */
 
+ // ToDo
+ // write code to convert binary digits contained in string last to first to decimal.
+
 function extractInput(){
     let input = document.forms["binaryInputForm"]["binaryInput"].value
 
