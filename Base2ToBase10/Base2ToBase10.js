@@ -19,15 +19,19 @@ function extractInput(){
     console.log(input);
 }
 
+function checkStringIsNotNull(str, errorMessages){
+    if(str == ""){
+      errorMessages.push(" " + "Input cannot be null");
+    }
+}
+
 function checkStringLength(str, errorMessages) {
     let isEightLong = false;
 
     if (str.length == 8) {
         isEightLong = true;
-    } if (str.length > 8) {
-        errorMessages.push("Input must be eight characters long");
-    } else {
-        errorMessages.push("Input must be eight characters long");
+    } else if ((str.length > 8 || str.length < 8) && str !== null) {
+        errorMessages.push(" " + "Input must be eight characters long");
     }
 
     return isEightLong;
