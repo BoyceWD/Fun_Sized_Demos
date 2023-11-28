@@ -6,9 +6,9 @@
 
  // ToDo
  // write code to convert binary digits contained in string last to first to decimal.
-
+var errorMessages = [];
 function extractInput(){
-    let input = document.forms["binaryInputForm"]["binaryInput"].value
+    let input = document.forms["binaryInputForm"]["txtBinaryInput"].value
 
     //ToDo
 
@@ -18,19 +18,38 @@ function extractInput(){
     // if input is valid instantiate a stack and insert input into the stack
     console.log(input);
 }
-function validateInput(){
 
+function checkStringLength(str, errorMessages) {
+    let isEightLong = false;
+
+    if (str.length == 8) {
+        isEightLong = true;
+    } if (str.length > 8) {
+        errorMessages.push("Input must be eight characters long");
+    } else {
+        errorMessages.push("Input must be eight characters long");
+    }
+
+    return isEightLong;
 }
-function checkStringIsBinary(str) {
+
+
+
+function checkStringIsBinary(str, errorMessages) {
     let isBinary = false;
     for (let i = 0; i < str.length; i++) {
       if (str[i] == "0" || str[i] == "1") {
         isBinary = true;
       } else {
         isBinary = false;
+        errorMessages.push("Input may only contain 1s and 0s");
       }
     }
     return isBinary;
+}
+
+function validateInput(){
+
 }
 var a ="101010";
 console.log(a);
