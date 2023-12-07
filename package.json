@@ -1,0 +1,20 @@
+{
+  "name": "fun_sized_demos",
+  "version": "1.0.0",
+  "description": "a series of small practice projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoyceWD/Fun_Sized_Demos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoyceWD/Fun_Sized_Demos/issues"
+  },
+  "homepage": "https://github.com/BoyceWD/Fun_Sized_Demos#readme"
+}
