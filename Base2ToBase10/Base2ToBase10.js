@@ -1,3 +1,4 @@
+
 /* 
  After having had mutch difficulty getting a working implimentation of a Stack class, I've decided instead to use a string as an
  alternative to an array. I should be able to use a string to store the text input from the user. I can use the slice method
@@ -6,6 +7,9 @@
 
  // ToDo
  // write code to convert binary digits contained in string last to first to decimal.
+
+
+ 
 var errorMessages = [];
 function extractInput(){
     let input = document.forms["binaryInputForm"]["txtBinaryInput"].value
@@ -20,9 +24,12 @@ function extractInput(){
 }
 
 function checkStringIsNotNull(str, errorMessages){
+  isNotNull = true;
     if(str == ""){
       errorMessages.push(" " + "Input cannot be null");
+      isNotNull = false;
     }
+    return isNotNull;
 }
 
 function checkStringLength(str, errorMessages) {
@@ -38,24 +45,63 @@ function checkStringLength(str, errorMessages) {
 }
 
 
-
+/*
 function checkStringIsBinary(str, errorMessages) {
     let isBinary = false;
     for (let i = 0; i < str.length; i++) {
       if (str[i] == "0" || str[i] == "1") {
         isBinary = true;
-      } else {
+      } else if (str[i] != "0" || str[i] != "1") {
         isBinary = false;
-        errorMessages.push("Input may only contain 1s and 0s");
+        errorMessages.push(" " + "Input may only contain 1s and 0s");
       }
     }
     return isBinary;
 }
-
+*/
+function checkStringIsBinary(str, errorMessages) {
+  let isBinary = true;
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] != "0" && str[i] != "1") {
+        isBinary = false;
+        
+    }
+    
+  }
+  if(isBinary == false){
+    errorMessages.push(" " + "Input may only contain 1s and 0s");
+  }
+  return isBinary;
+}
 function validateInput(){
 
 }
 var a ="101010";
+function sliceOffLastChar(str){
+  s = "";
+  sliceEndPos = str.length;
+  for(i = 0; i < str.length; i++) {
+      
+      positionOfSecondToLastElement = str.length - 1;
+      let lastBit = str.slice(sliceEndPos-1);
+      sliceEndPos -= 1;
+      s += lastBit;
+  }
+  return s;
+  
+}
+console.log(sliceOffLastChar('0011'));
 console.log(a);
 a;
 console.log(a.slice(3,5));
+isb = checkStringIsBinary(a ,errorMessages);
+isnb = checkStringIsBinary("1o01", errorMessages);
+isl = checkStringLength("1o01", errorMessages);
+isnn = checkStringIsNotNull("a", errorMessages);
+isn = checkStringIsNotNull("", errorMessages);
+
+console.log(isb + " " + errorMessages);
+console.log(isnb + " " + errorMessages);
+console.log(isl + " " + errorMessages);
+console.log(isnn + " " + errorMessages);
+console.log(isn + " " + errorMessages);

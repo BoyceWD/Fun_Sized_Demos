@@ -1,5 +1,6 @@
 const checkStringIsBinary = require('./checkStringIsBinary');
 const checkStringLength = require('./checkStringLength');
+const sliceOffLastChar = require('./sliceOffLastChar');
 //const ic = require('./InputCheckerModule.js')
 
 
@@ -20,4 +21,8 @@ test('checks string 11010110 for non binary values; returns true', () => {
 test('checks string 11010110 is eight characters in length returns true', () => {
     expect(checkStringLength("11010110", errorMessages = [])).toBe(true);
     //expect(errorMessages).toBe(null);
+})
+
+test('passes string 0011, returns string 1100', () => {
+    expect(sliceOffLastChar('0011').toBe('1100'));
 })
