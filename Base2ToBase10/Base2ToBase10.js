@@ -76,7 +76,7 @@ function checkStringIsBinary(str, errorMessages) {
 function validateInput(){
 
 }
-var a ="101010";
+var a ="101010";/*
 function sliceOffLastChar(str){
   s = "";
   sliceEndPos = str.length;
@@ -89,8 +89,26 @@ function sliceOffLastChar(str){
   }
   return s;
   
+}*/
+function sliceOffLastChar(str){
+  var s = "";
+  var sliceEndPos = str.length;
+  var sliceStartPos = sliceEndPos -1;
+
+  while(sliceEndPos > 0){
+      sliceStartPos = sliceEndPos -1;
+      var lastBit = str.slice(sliceStartPos, sliceEndPos);
+      sliceEndPos -= 1;
+      s += lastBit;
+      lastBit = "";
+  }
+  return s;
+  
 }
-console.log(sliceOffLastChar('0011'));
+f = sliceOffLastChar('0011');
+console.log(f);
+b = sliceOffLastChar(f);
+console.log(b);
 console.log(a);
 a;
 console.log(a.slice(3,5));
