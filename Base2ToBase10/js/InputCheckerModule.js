@@ -55,3 +55,4 @@ function checkStringIsBinary(str, errorMessages){
  
 } */
 module.exports = checkStringIsBinary;
+module.exports = checkStringLength;
